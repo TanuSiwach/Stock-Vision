@@ -15,7 +15,8 @@ import streamlit as st
 st.title('STOCK PRICE PREDICTION')
 user_input=st.text_input('ENTER STOCK TICKER','AAPL')
 from pandas_datareader import data as pdr
-
+import yfinance as yf
+yf.pdr_override()
 ds = pdr.get_data_yahoo(user_input, start = dt.datetime(2016, 1, 1), end = date.today())
 
 
